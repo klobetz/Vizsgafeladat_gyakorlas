@@ -77,7 +77,50 @@ namespace Pilotak
                     .ToList()
                     .ForEach(x => Console.WriteLine($"\t{x.Nev} ({x.Szulido.ToShortDateString()})"));
 
+                //6.feladat
+                
+                var nemzetiseg = list.Where(x => x.Rajtszam != 0)
+                                     .OrderBy(x => x.Rajtszam)
+                                     .First().Nemzetiseg;
+                Console.WriteLine($"6.feladat: {nemzetiseg}");
 
+
+                var nemzetiseg2 = list.FindAll(x => x.Rajtszam > 0)
+                                     .OrderBy(x => x.Rajtszam)
+                                     .First().Nemzetiseg;
+                Console.WriteLine($"6.feladat: {nemzetiseg2}");
+
+
+                var nemzetiseg3 = list.Where(x => x.Rajtszam > 0)
+                                     .Min(x=>x.Rajtszam);
+                list.Where(x => x.Rajtszam == nemzetiseg3).ToList().ForEach(x => Console.WriteLine($"6.feladat: {x.Nemzetiseg}"));
+
+
+                var megold1 = list.FirstOrDefault(x=>x.Rajtszam == nemzetiseg3);
+                Console.WriteLine($"6.feladat: {megold1.Nemzetiseg}");
+
+                //7.feladat
+                var rajtszamoslista = list.Where(x=>x.Rajtszam!=0).ToList();
+                rajtszamoslista.GroupBy(x => x.Rajtszam)
+                    .Where(x=>x.Count()>1)
+                    .Select(x=>x.Key)
+                    .ToList()
+                    .ForEach(x => Console.Write($"{x}, "));
+                
+                Console.WriteLine();
+                list.Where(x => x.Rajtszam != 0)
+                .GroupBy(x => x.Rajtszam)
+                    .Where(x => x.Count() > 1)
+                    .Select(x => x.Key)
+                    .ToList()
+                    .ForEach(x => Console.Write($"{x}, "));
+                
+                Console.WriteLine();
+                list.GroupBy(x=>x.Rajtszam)
+                    .Where(x=>x.Key != 0 && x.Count()>1)
+                    .ToList()
+                    .ForEach(x => Console.Write($"{x.Key}, "));
+                
             }
 
             Console.ReadLine();
