@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ADD88530-25DA-430C-AD56-FDE82577D9BA}</ProjectGuid>
+    <ProjectGuid>{EF13ABEC-1842-4AD7-970C-21445F46172D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Pilotak</RootNamespace>
-    <AssemblyName>Pilotak</AssemblyName>
+    <RootNamespace>Kemia</RootNamespace>
+    <AssemblyName>Kemia</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,13 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="adatszerkezet.cs" />
+    <Compile Include="Adatszerkezet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <Content Include="pilotak.csv">
+    <Content Include="felfedezesek.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
